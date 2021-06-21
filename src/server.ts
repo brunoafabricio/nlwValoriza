@@ -2,4 +2,5 @@ import express from "express";
 
 const app = express();
 
-app
+// http://localhost:3000
+app.listen(3000, () => console.log("Server is running"));
