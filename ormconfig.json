@@ -1,0 +1,7 @@
+{
+  "type": "sqlite",
+  "database": "src/database/batabase.sqlite",
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
+}
