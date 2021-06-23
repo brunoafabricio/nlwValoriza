@@ -4,13 +4,17 @@ import { CreateUserService } from "../services/CreateUserService";
 class CreateUserController {
   
   async handle(request: Request, response: Response){
-    const { name, email, admin } = request.body;
+    try {   
+      const { name, email, admin } = request.body;
 
-    const createUserService = new CreateUserService();
+      const createUserService = new CreateUserService();
 
-    const user = await createUserService.execute({ name, email, admin});
+      const user = await createUserService.execute({ name, email, admin});
 
-    return response.json(user);
+      return response.json(user);
+    } catch (err) {
+      return response.status(400).json({ error: err.message})
+    }
   }
 }
 
@@ -19,5 +23,7 @@ export { CreateUserController }
 /**
  * 
  *  -> server -> controller -> service ...
+ * 
+ *   Controller -> Service (throw new Error)
  * 
  */
