@@ -4,7 +4,7 @@ import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn} from 
 class User {
 
   @PrimaryColumn()
-  id: string;
+  readonly id: string;
 
   @Column()
   name: string;
