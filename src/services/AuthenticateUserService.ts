@@ -37,7 +37,9 @@ class AuthenticateUserService {
     // Gerar token
     const token = await sign({
       email: user.email
-    }, "4ec580b109680fefa539df6d8dc28826",  {
+    }, 
+    "4ec580b109680fefa539df6d8dc28826",  
+    {
       subject: user.id,
       expiresIn: "1d" // token expira em 1 dia
       // em produção, aplicação faz um refresh token 
