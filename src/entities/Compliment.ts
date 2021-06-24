@@ -5,9 +5,9 @@ import { User } from "./User";
 
 @Entity("compliments")
 class Compliment {
+
   @PrimaryColumn()
-  //readonly id: string;
-  id: string;
+  readonly id: string;
 
   @Column()
   user_sender: string;
@@ -36,7 +36,7 @@ class Compliment {
   @CreateDateColumn()
   created_at: Date;
 
-  contructor() {
+  constructor() {
     if(!this.id){
       this.id = uuid();
     }
