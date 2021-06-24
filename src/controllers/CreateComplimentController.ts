@@ -17,4 +17,4 @@ class CreateComplimentController {
   }
 }
 
-export { CreateComplimentService }
+export { CreateComplimentController }
