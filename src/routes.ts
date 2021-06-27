@@ -5,13 +5,13 @@ import { CreateTagController } from "./controllers/CreateTagController";
 import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
 import { CreateComplimentController } from "./controllers/CreateComplimentController";
 
-import { ensureAdmin } from "./middlewares/ensureAdmin";
-import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
 import { ListUserSendComplimentsController } from "./controllers/ListUserSenderComplimentsController";
 import { ListUserReceiveComplimentsController } from "./controllers/ListUserReceiveComplimentsController";
 import { ListTagsController } from "./controllers/ListTagsController";
 import { ListUsersController } from "./controllers/ListUsersController";
 
+import { ensureAdmin } from "./middlewares/ensureAdmin";
+import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
 
 const router = Router();
 
@@ -36,6 +36,7 @@ router.get(
   ensureAuthenticated, 
   listUserSendComplimentsController.handle
 );
+
 router.get(
   "/users/compliments/receive",
   ensureAuthenticated,  
